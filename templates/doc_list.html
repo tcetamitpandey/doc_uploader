@@ -1,7 +1,15 @@
-
-<h2>Uploaded Documents</h2>
+<h1>Folders</h1>
 <ul>
-    {% for document in documents %}
-        <li><a href="{{ document.file.url }}">{{ document.file.name }}</a></li>
+    {% for folder in folders %}
+        <li>
+            {{ folder }}
+            <a href="{% url 'download_folder' folder %}" class="btn btn-primary">Download</a>
+        </li>
+    {% empty %}
+        <li>No folders found. Please upload some!</li>
     {% endfor %}
 </ul>
+<br>
+<hr>
+<br>
+<button><a style="text-decoration: none; color: black;" href="{% url 'home'  %}" >Go TO HOME</a></button>

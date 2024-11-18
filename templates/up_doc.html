@@ -1,7 +1,14 @@
-
-<h2>Upload Document</h2>
-<form method="post" enctype="multipart/form-data">
+<h2>Upload Folder</h2>
+<form method="POST" enctype="multipart/form-data" action="{% url 'upload_document' %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    <input type="file" name="files" webkitdirectory multiple>
     <button type="submit">Upload</button>
 </form>
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+<br>
+<hr>
+<br>
+<button><a style="text-decoration: none; color: black;" href="{% url 'home'  %}" >Go TO HOME</a></button>

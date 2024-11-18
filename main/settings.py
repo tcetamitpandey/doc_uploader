@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-(5(k^_!=)s=qr&se=fhqfov#!d0$2yo2sgqi3ujqywz#jx1fzz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',         # Localhost
+    '192.168.x.x',       # Replace with your computer's IP
+    'localhost',         # Allow localhost access
+    '*',  ]
 
 
 # Application definition
@@ -124,7 +128,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# document_uploader/settings.py
 import os
 
 MEDIA_URL = '/media/'
